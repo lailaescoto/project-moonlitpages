@@ -1,11 +1,8 @@
 import Image from "next/image";
-import Navbar from "./navbar";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <div className="flex flex-col items-center justify-center min-h-screen p-3 bg-gradient-to-b from-[#3262a1] to-[#021c42] text-white font-sans">
+      <div className="flex flex-col items-center justify-center min-h-screen p-3 bg-gradient-to-b from-[#0a3975] to-[#021c42] text-white font-sans">
       <Image
             src="/moonlit-icon.png"
             alt="Moonlit Pages Logo"
@@ -42,6 +39,5 @@ export default function Home() {
           © {new Date().getFullYear()} Moonlit Pages. All rights reserved.
         </footer>
       </div>
-    </>
   );
 }

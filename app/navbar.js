@@ -22,7 +22,7 @@ export default function Navbar() {
           <Link href="/" className="hover:text-zinc-900 font-semibold dark:hover:text-white transition-colors">Home</Link>
         </li>
         <li>
-          <Link href="/library" className="hover:text-zinc-900 font-semibold dark:hover:text-white transition-colors">Library</Link>
+          <Link href="/library" className=" hover:text-zinc-900 font-semibold dark:hover:text-white transition-colors">Library</Link>
         </li>
         <li>
           <Link href="/profile" className="hover:text-zinc-900 font-semibold dark:hover:text-white transition-colors">Profile</Link>
