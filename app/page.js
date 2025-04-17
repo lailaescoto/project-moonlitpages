@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-      <div className="flex flex-col items-center justify-center min-h-screen p-3 bg-gradient-to-b from-[#0a3975] to-[#021c42] text-white font-sans">
+      <div className="flex flex-col items-center justify-center min-h-screen p-3 bg-gradient-to-b from-gray-900 to-black text-white font-sans">
       <Image
             src="/moonlit-icon.png"
             alt="Moonlit Pages Logo"

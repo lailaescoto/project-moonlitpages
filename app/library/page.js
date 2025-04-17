@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import Link from "next/link";
+
 
 export default function Library() {
   const [books, setBooks] = useState([]);
@@ -76,7 +78,7 @@ export default function Library() {
   }
 
   return (
-    <div className="library-page flex flex-col items-center p-6 bg-gradient-to-b from-[#0a3975] to-[#041a3b] text-white font-sans min-h-screen">
+    <div className="library-page flex flex-col items-center p-6 bg-gradient-to-b from-gray-900 to-black text-white font-sans min-h-screen">
    
       <div className="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
         <input type="text" placeholder="Search by title or author..." className="w-full sm:w-2/3 px-4 py-2 rounded-md text-black bg-white" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
@@ -87,28 +89,37 @@ export default function Library() {
         </select>
       </div>
 
-      <div className="w-full max-w-4xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {currentBooks.length > 0 ? (
-          currentBooks.map((book) => (
-            <a key={book.key} href={`https://openlibrary.org${book.key}`} className="bg-white text-[#0b0c2a] p-2 rounded-xl shadow-md flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer no-underline">
-              {book.cover_i ? (
-                <img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`} alt={`Cover of ${book.title}`} className="w-40 h-50 object-cover mb-3 rounded-t-lg transition duration-300"/>
-              ) : (
-                <div className="w-24 h-32 bg-gray-300 flex items-center justify-center text-sm text-gray-700 mb-3 rounded-t-lg">
-                  No Cover Available
-                </div>
-              )}
-              <h2 className="text-sm font-semibold text-center mb-1">{book.title}</h2>
-              <p className="text-xs text-gray-700 text-center mb-2">
-                {book.author_name?.slice(0, 2).join(", ")}
-                {book.author_name?.length > 2 ? ", etc." : ""}
-              </p>
-            </a>
-          ))
+    <div className="w-full max-w-4xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    {currentBooks.length > 0 ? (
+    currentBooks.map((book) => (
+      <Link
+        key={book.key}
+        href={`/book/${book.key.replace("/works/", "")}`}
+        className="bg-gray-800 text-white p-2 rounded-xl shadow-md flex flex-col items-center transform transition duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer no-underline"
+      >
+        {book.cover_i ? (
+          <img
+            src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
+            alt={`Cover of ${book.title}`}
+            className="w-40 h-50 object-cover mb-3 rounded-t-lg transition duration-300"
+          />
         ) : (
-          <div className="text-white text-lg">No books found.</div>
+          <div className="w-24 h-32 bg-gray-400 flex items-center justify-center text-sm text-white mb-3 rounded-t-lg">
+            No Cover Available
+          </div>
         )}
-      </div>
+        <h2 className="text-sm font-semibold text-center mb-1 text-white">{book.title}</h2>
+        <p className="text-xs text-white text-center mb-2">
+          {book.author_name?.slice(0, 2).join(", ")}
+          {book.author_name?.length > 2 ? ", etc." : ""}
+        </p>
+      </Link>
+    ))
+    ) : (
+    <div className="text-white text-lg">No books found.</div>
+    )}
+    </div>
+
 
       <div className="flex justify-center items-center mt-6 space-x-4">
 
