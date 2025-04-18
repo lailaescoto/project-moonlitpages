@@ -15,7 +15,7 @@ export default function Library() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("https://openlibrary.org/search.json?q=book&limit=1000");
+        const response = await fetch("https://openlibrary.org/search.json?q=book&limit=100");
         const data = await response.json();
         if (data && data.docs && data.docs.length > 0) {
           setBooks(data.docs);
