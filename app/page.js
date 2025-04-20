@@ -1,14 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
       <div className="flex flex-col items-center justify-center min-h-screen p-3 bg-gradient-to-b from-gray-900 to-black text-white font-sans">
-      <Image
-            src="/moonlit-icon.png"
-            alt="Moonlit Pages Logo"
-            width={500}
-            height={200}
-          />
+      <Image src="/moonlit-icon.png" alt="Moonlit Pages Logo" width={500} height={200}/>
           {/* Logo drawn by me, asked ChatGPT to refine it */}
         <main className="flex flex-col items-center gap-8 text-center">
         <div className="px-6 py-3 rounded-xl border-2 border-white shadow-lg">
@@ -20,18 +16,12 @@ export default function Home() {
           A cozy digital space for book lovers to explore, review, and connect over their favorite reads.
           </p>
           <div className="flex gap-4 mt-4 flex-col sm:flex-row">
-            <a
-              href="/library"
-              className="bg-white text-[#0b0c2a] px-6 py-3 rounded-full font-semibold hover:bg-[#b9b9b9] transition"
-            >
+            <a href="/library" className="bg-white text-[#0b0c2a] px-6 py-3 rounded-full font-semibold hover:bg-[#b9b9b9] transition">
               Explore Library
             </a>
-            <a
-              href="/login"
-              className="bg-[#041a3b] border border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0b0c2a] transition"
-            >
+            <Link href="sign-in" className="bg-[#041a3b] border border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-[#0b0c2a] transition">
               Sign In
-            </a>
+            </Link>
           </div>
         </main>
 
