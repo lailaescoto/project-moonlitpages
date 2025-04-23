@@ -119,7 +119,7 @@ export default function ProfilePage() {
   if (!user) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-[#0f0f0f] text-white px-6 text-center">
-        <h1 className="text-2xl sm:text-3xl font-semibold mb-4">You're not signed in</h1>
+        <h1 className="text-2xl sm:text-3xl font-semibold mb-4">You&apos;re not signed in</h1>
         <button 
           onClick={() => router.push("/sign-in")} 
           className="bg-yellow-400 text-black px-6 py-2 rounded-lg font-medium hover:bg-yellow-300 transition-all shadow-md"
