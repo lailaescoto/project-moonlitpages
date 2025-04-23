@@ -34,7 +34,7 @@ export default function SignInPage() {
       <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white flex items-center justify-center p-6">
         <div className="w-full max-w-sm text-center space-y-6">
           <h2 className="text-3xl font-semibold">Welcome Back!</h2>
-          <p className="text-gray-300">You're already signed in as {user.email}</p>
+          <p className="text-gray-300">You&apos;re already signed in as {user.email}</p>
           
           <div className="space-y-4">
             <Link href="/library" className="block w-full py-3 rounded-lg font-semibold bg-yellow-400 hover:bg-yellow-300 text-black transition-colors">
@@ -89,7 +89,7 @@ export default function SignInPage() {
         </form>
 
         <div className="mt-6 text-center">
-          <p className="text-gray-400 mb-3">Don't have an account?</p>
+          <p className="text-gray-400 mb-3">Don&apos;t have an account?</p>
           <Link href="/sign-up" className="inline-block w-full py-2 rounded-lg font-semibold border border-yellow-400 text-yellow-400 hover:bg-yellow-400/10 transition-colors">
             Create Account
           </Link>

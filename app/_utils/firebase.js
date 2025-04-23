@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
   signOut
 } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDBdj8pjy9uX3chd3RbH5Z4fY6IUaossd0",
@@ -19,6 +20,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
 
 // Auth state observer
 export function onAuthStateChange(callback) {

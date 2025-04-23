@@ -74,7 +74,12 @@ export default function Library() {
   };
 
   if (loading) {
-    return <div className="text-white text-lg mt-8">Loading books...</div>;
+    return <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white flex items-center justify-center p-6">
+    <div className="text-center space-y-4">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-yellow-400 mx-auto"></div>
+      <p>Loading books...</p>
+    </div>
+  </div>;
   }
 
   return (
